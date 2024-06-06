@@ -82,3 +82,32 @@ Suite à ces résultats, nous avons donc pu retaper notre commande en spécifian
 Après des recherches approfondies sur le site de john the ripper, ainsi que sur des blogs. Aucune solution n’a été trouvée. Mais une piste probable est que le Mac autorise l’installation de John the Ripper dans son terminal, sans autoriser les dépendances nécessaires à sa bonne exécution.
 
 En conclusion, par soucis d’efficacité, nous n’utiliserons pas John the Ripper sous macOS.
+
+
+# Récupération d'un mot de passe windows server
+
+## 1- Récupération des fichiers de mot de passe hachés:
+
+Dans un premier temps il faut rassembler nos ressources, à savoir, les mots de passes hachés.
+Pour les systèmes windows, ils se trouvent dans les fichiers SAM et SYSTEMES.
+
+Nous allons donc taper les commandes suivantes:
+
+- copy C:\Windows\System32\config\SAM E:\
+- copy C:\Windows\System32\config\SYSTEM E:\
+
+## 2- Erreurs et points de blocage
+
+Le message d’erreur suivant apparait:  le processus ne peut pas acceder au fichier car il est en cours d’utilisation.
+Il nous informe donc que Sam et System sont en cours d’utilisation et qu’ils ne peuvent pas être copiés.
+
+Pour contourner le problème nous avons donc tenté d’utiliser l’outil de sauvegarde « shadow copy ».
+Ce dernier consiste à récupérer les sauvegardes automatiques de windows.
+
+Mais même avec les droits utilisateurs, le même message d’erreur s’est affiché.
+
+Après recherches, aucune solution n’a permis d’avoir une autre sortie que ce message d’erreur. 
+
+En conclusion, dans un soucis d’efficacité, je ne vais pas utiliser John the Ripper dans le but de récupérer les mots de passe d’un serveur Windows.
+
+
